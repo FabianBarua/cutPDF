@@ -6,6 +6,8 @@ from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 import fitz
 import re
+import sys
+
 
 cm = 28.35
 
@@ -154,17 +156,14 @@ def list_to_text(lst):
 
 def main():
     
-    #doc = fitz.open('aa.pdf')
-    #text = ""
-    #first page
-    #text = doc[0].get_text()
+    pdf_path = sys.argv[1]
     
-    
-    doc = fitz.open('aa.pdf')
+    doc = fitz.open(pdf_path)
     text = ""
     
-    pdfName = 'a.pdf'
-    WIDTH, HEIGHT, can = create_pdf(WIDTH_GLOBAL, HEIGHT_GLOBAL, pdfName)
+    pdf_name = pdf_path.replace('.pdf', '_cut.pdf')
+    
+    WIDTH, HEIGHT, can = create_pdf(WIDTH_GLOBAL, HEIGHT_GLOBAL, pdf_name )
     
     for page in doc:
         text = page.get_text()
@@ -264,13 +263,6 @@ def main():
     can.save()  
     subprocess.Popen(["a.pdf"], shell=True)
         
-
-
-
-
-
-
-
 if __name__ == '__main__':
     
     main()
