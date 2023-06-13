@@ -224,7 +224,6 @@ def main():
                 fontSize=8,
                 font="Helvetica-Bold",
                 nCut=63)
-        print (linesSearch)
         
         #Detalles del envio
         linesSearch = extract_lines(text_list, search_text="DETALLES DEL ENVIO",startIndex=1, textBreak="RESUMEN DE LA CARGA",)
@@ -261,7 +260,7 @@ def main():
         can.showPage()
         
     can.save()  
-    subprocess.Popen(["a.pdf"], shell=True)
+    subprocess.Popen([pdf_name], shell=True)
         
 if __name__ == '__main__':
     
