@@ -23,8 +23,9 @@ Ejecuta el siguiente comando:
 python app.py "ruta_del_pdf"
 Reemplaza "ruta_del_pdf" con la ruta del archivo PDF del cual deseas extraer el texto y escribirlo en un nuevo archivo PDF.
 Ejemplo
+```bash
 python app.py "test.pdf"
-
+```
 Este ejemplo ejecutará el script utilizando el archivo aa.pdf como entrada.
 
 Notas
